@@ -1,0 +1,286 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_specular",
+        "KHR_materials_volume",
+        "KHR_materials_ior",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 89976,
+            "type": "VEC3",
+            "max": [
+                3.751645088195801,
+                22.660268783569336,
+                6.503325939178467
+            ],
+            "min": [
+                -4.36453914642334,
+                0.23110899329185486,
+                -8.886268615722656
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 89976,
+            "type": "VEC3",
+            "max": [
+                0.9999997615814209,
+                0.9995537400245667,
+                0.9997838735580444
+            ],
+            "min": [
+                -0.9999997615814209,
+                -0.9999927878379822,
+                -0.9999673366546631
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 89976,
+            "type": "VEC2",
+            "max": [
+                0.9950000047683716,
+                1.012205958366394
+            ],
+            "min": [
+                0.002750999992713332,
+                0.17098098993301392
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 90000,
+            "type": "SCALAR",
+            "max": [
+                89975
+            ],
+            "min": [
+                0
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2081,
+            "type": "VEC3",
+            "max": [
+                4.220519065856934,
+                22.67648696899414,
+                -10.573046684265137
+            ],
+            "min": [
+                -5.325067043304443,
+                0.5667049884796143,
+                -25.745662689208984
+            ]
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2081,
+            "type": "VEC3",
+            "max": [
+                0.9999496340751648,
+                0.9946185350418091,
+                1.0
+            ],
+            "min": [
+                -0.9999982118606567,
+                -0.9999997615814209,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2081,
+            "type": "VEC2",
+            "max": [
+                0.947281002998352,
+                0.9989410042762756
+            ],
+            "min": [
+                0.012152999639511108,
+                0.04764199256896973
+            ]
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 9072,
+            "type": "SCALAR",
+            "max": [
+                2080
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 3342112,
+            "uri": "Coffee OBJ.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 1079712,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 1079712,
+            "byteLength": 1079712,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2159424,
+            "byteLength": 719808,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 2879232,
+            "byteLength": 360000,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3239232,
+            "byteLength": 24972,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3264204,
+            "byteLength": 24972,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3289176,
+            "byteLength": 16648,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 3305824,
+            "byteLength": 36288,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "aiStandardSurface3SG",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            },
+            "extensions": {
+                "KHR_materials_specular": {
+                    "specularFactor": 1.0,
+                    "specularColorFactor": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "KHR_materials_ior": {
+                    "ior": 1.0
+                }
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "default1",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "pCube1",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 7,
+                    "attributes": {
+                        "POSITION": 4,
+                        "NORMAL": 5,
+                        "TEXCOORD_0": 6
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "Coffee OBJ.obj",
+            "children": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "name": "default"
+        },
+        {
+            "name": "default1",
+            "mesh": 0
+        },
+        {
+            "name": "default_node"
+        },
+        {
+            "name": "pCube1",
+            "mesh": 1
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
