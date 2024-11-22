@@ -9,7 +9,7 @@ import Experience from '../models/Experience';
 
 const Landing = () => {
   return (
-    <section className="w-screen h-screen">
+    <section className="w-screen h-screen -mt-16">
       {/* <div className="max-w-full mx-auto object-cover ">
       <img className="max-w-full max-h-full object-cover" src={Background}/>
       </div> */}
