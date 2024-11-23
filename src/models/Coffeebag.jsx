@@ -3,8 +3,7 @@ import { useLoader, useFrame } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import * as THREE from 'three'
 
-// Import lights from three
-import { AmbientLight, DirectionalLight } from 'three'
+
 
 export function CoffeeOBJ(props) {
   const meshRef = useRef()

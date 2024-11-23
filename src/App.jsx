@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { Landing, OurCoffees, CoffeeClass } from './pages';
+import { Landing, OurCoffees, CoffeeClass, OurCoffees2 } from './pages';
 import './index.css'
 
 
@@ -18,7 +18,7 @@ function App() {
       <div className="pt-[80px]">
         <Routes>
           <Route path="/" element={<Landing/>}/>
-          <Route  path="/ourcoffees" element={<OurCoffees/>}/>
+          <Route  path="/ourcoffees" element={<OurCoffees2/>}/>
           <Route  path="/coffeeclass" element={<CoffeeClass/>}/>
           
 
