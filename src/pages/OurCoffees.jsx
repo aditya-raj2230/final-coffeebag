@@ -10,6 +10,8 @@ const OurCoffees = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [quantity, setQuantity] = useState('250g');
+  const [grindType, setGrindType] = useState('Whole Bean');
 
   useEffect(() => {
     const gallery = document.querySelector(".gallery");
@@ -79,16 +81,16 @@ const OurCoffees = () => {
       const logo = document.createElement("img");
       logo.src = item.titleurl;
       logo.alt = `${item.title} Logo`;
-      logo.className = "w-48 mb-4 mx-auto";
+      logo.className = "w-72 mb-4 mx-auto";
 
       const info = document.createElement("div");
       info.className =
-        "text-xs space-y-2 font-light leading-5 max-h-40 overflow-y-auto";
+        "text-xs space-y-2 font-light leading-5 max-h-28 overflow-y-auto";
 
       // Create formatted content
       info.innerHTML = `
         <p class="mb-2">${item.copy}</p>
-        <p class="text-sm font-medium">${item.price}</p>
+        
         <div class="grid grid-cols-2 gap-x-4 gap-y-1 mt-2 text-xs">
           ${Object.entries(item.details)
             .map(
@@ -105,12 +107,12 @@ const OurCoffees = () => {
 
       const projectImgContainer = document.createElement("div");
       projectImgContainer.className =
-        "w-full h-[240px] max-h-[350px] overflow-hidden rounded-lg"; // Fixed height for image container
+        "w-full h-[400px] max-h-[400px] overflow-hidden rounded-lg mb-2 mt-4";
 
       const projectImg = document.createElement("img");
       projectImg.src = item.imageurl;
       projectImg.alt = `${item.title} Preview`;
-      projectImg.className = "h-full w-96 mx-auto my-auto object-cover"; // Image fits within fixed dimensions
+      projectImg.className = "w-full h-full object-cover";
 
       projectImgContainer.appendChild(projectImg);
 
@@ -198,30 +200,33 @@ const OurCoffees = () => {
         <div className="absolute inset-0 backdrop-blur-[80px] bg-black/30"></div>
       </div>
 
-      {/* Site Info */}
-      <div className="relative flex flex-1 flex-col justify-center p-4 border-r border-white/10">
+      {/* Site Info / Product Details */}
+      <div className="relative flex flex-[0.75] flex-col justify-center p-4 border-r border-white/10">
         <div 
-          className="relative"
+          className="relative flex flex-col items-center"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
+          {/* Hover Image */}
           <img
             src={galleryItems[activeIndex].hoverUrl}
             alt="Coffee Doodle"
-            className="absolute inset-0 z-10 w-[300px] h-[350px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
+            className="absolute z-10 w-[250px] h-[250px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
             style={{ 
-              top: '-50px',
-              opacity: isHovering ? 1 : 0
+              opacity: isHovering ? 1 : 0,
+              top: 0,
+              left: '50%',
+              transform: 'translateX(-50%)'
             }}
           />
           
-          {/* Updated Canvas wrapper with transition */}
+          {/* Canvas wrapper */}
           <div
             className="transition-opacity duration-800 ease-in-out"
             style={{ opacity: isLoading ? 0 : 1 }}
           >
             <Canvas
-              style={{ width: '300px', height: '350px', position: 'relative', margin: '0', top: '-50px' }}
+              style={{ width: '250px', height: '250px' }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
@@ -235,11 +240,53 @@ const OurCoffees = () => {
               />
             </Canvas>
           </div>
+          
+          {/* Product Details Container */}
+          <div className="w-[300px] space-y-4 p-0">
+            {/* Price */}
+            <div className="text-center text-lg font-medium">
+              {galleryItems[activeIndex].price}
+            </div>
+
+            {/* Dropdown Menus */}
+            <div className="space-y-3">
+              <select 
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
+                className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
+              >
+                <option value="250g">250g</option>
+                <option value="500g">500g</option>
+                <option value="1kg">1kg</option>
+              </select>
+
+              <select 
+                value={grindType}
+                onChange={(e) => setGrindType(e.target.value)}
+                className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
+              >
+                <option value="Whole Bean">Whole Bean</option>
+                <option value="Espresso">Espresso</option>
+                <option value="Filter">Filter</option>
+                <option value="French Press">French Press</option>
+              </select>
+
+              {/* Add to Cart Button */}
+              <button 
+                onClick={() => {
+                  console.log(`Added ${quantity} of ${grindType} ${galleryItems[activeIndex].title} to cart`);
+                }}
+                className="w-full py-2 px-4 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Project Preview */}
-      <div className="relative flex-[2] p-4 project-preview space-y-4 bg-black/20 backdrop-blur-sm"></div>
+      <div className="relative flex-[1.75] p-4 pb-8 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
 
       {/* Gallery */}
       <div className="relative z-10 flex flex-col gap-3 overflow-y-auto h-full p-4 bg-black/30 border-l border-white/10 backdrop-blur-md gallery w-[300px]">
