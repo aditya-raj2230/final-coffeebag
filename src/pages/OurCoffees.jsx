@@ -207,10 +207,10 @@ const OurCoffees = () => {
           <img
             src={galleryItems[activeIndex].hoverUrl}
             alt="Coffee Doodle"
-            className="absolute z-10 w-[250px] h-[250px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
+            className="absolute z-10 w-[300px] h-[300px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
             style={{ 
               opacity: isHovering ? 1 : 0,
-              top: 0,
+              top: -20,
               left: '50%',
               transform: 'translateX(-50%)'
             }}
@@ -224,7 +224,7 @@ const OurCoffees = () => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
-              style={{ width: '250px', height: '250px' }}
+              style={{ width: '250px', height: '250px', marginBottom:'20px' }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
