@@ -18,7 +18,7 @@ function App() {
       <div className="pt-[80px]">
         <Routes>
           <Route path="/" element={<Landing/>}/>
-          <Route  path="/ourcoffees" element={<OurCoffees2/>}/>
+          <Route  path="/ourcoffees" element={<OurCoffees/>}/>
           <Route  path="/coffeeclass" element={<CoffeeClass/>}/>
           
 
