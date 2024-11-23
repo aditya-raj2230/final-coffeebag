@@ -107,12 +107,12 @@ const OurCoffees = () => {
 
       const projectImgContainer = document.createElement("div");
       projectImgContainer.className =
-        "w-full overflow-hidden rounded-lg mb-2 mt-4";
+        "w-96 h-[400px] max-h-[400px] overflow-hidden rounded-lg mb-2 mt-4 mx-auto";
 
       const projectImg = document.createElement("img");
       projectImg.src = item.imageurl;
       projectImg.alt = `${item.title} Preview`;
-      projectImg.className = "w-full h-auto object-contain";
+      projectImg.className = "w-full h-full object-cover";
 
       projectImgContainer.appendChild(projectImg);
 
@@ -224,7 +224,7 @@ const OurCoffees = () => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
-              style={{ width: '250px', height: '250px' }}
+              style={{ width: '250px', height: '400px' }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
@@ -283,9 +283,8 @@ const OurCoffees = () => {
         </div>
       </div>
 
-      {/* Project Preview - adjusted padding and overflow handling */}
-      <div className="relative flex-[1.75] p-4 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto">
-      </div>
+      {/* Project Preview */}
+      <div className="relative flex-[1.75] p-4 pb-8 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
 
       {/* Gallery */}
       <div className="relative z-10 flex flex-col gap-3 overflow-y-auto h-full p-4 bg-black/30 border-l border-white/10 backdrop-blur-md gallery w-[300px]">
