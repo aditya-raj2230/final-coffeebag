@@ -202,11 +202,7 @@ const OurCoffees = () => {
 
       {/* Site Info / Product Details */}
       <div className="relative flex flex-[0.75] flex-col justify-center p-4 border-r border-white/10">
-        <div 
-          className="relative flex flex-col items-center"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-        >
+        <div className="relative flex flex-col items-center">
           {/* Hover Image */}
           <img
             src={galleryItems[activeIndex].hoverUrl}
@@ -224,6 +220,8 @@ const OurCoffees = () => {
           <div
             className="transition-opacity duration-800 ease-in-out"
             style={{ opacity: isLoading ? 0 : 1 }}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
               style={{ width: '250px', height: '250px' }}
