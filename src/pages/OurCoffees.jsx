@@ -107,7 +107,7 @@ const OurCoffees = () => {
 
       const projectImgContainer = document.createElement("div");
       projectImgContainer.className =
-        "w-96 h-[60vh] max-h-[80vh] overflow-hidden rounded-lg  mt-4 mx-auto my-auto";
+        "w-[40vw] h-[60vh] max-h-[80vh] overflow-hidden rounded-lg  mt-4 mx-auto mb-0  ";
 
       const projectImg = document.createElement("img");
       projectImg.src = item.imageurl;
@@ -191,7 +191,7 @@ const OurCoffees = () => {
   return (
     <div className="flex h-screen w-screen overflow-auto text-white">
       {/* Blurry Preview */}
-      <div className="fixed w-screen h-screen inset-0 blurry-prev -z-10">
+      <div className="fixed w-screen h-screen inset-0 blurry-prev -z-10 ">
         <img
           src={galleryItems[0].imageurl}
           alt="Blurry Preview"
@@ -240,7 +240,7 @@ const OurCoffees = () => {
           </div>
           
           {/* Product Details Container */}
-          <div className="w-[300px] space-y-4 p-0">
+          <div className="w-[300px] space-y-4 ">
             {/* Price */}
             <div className="text-center text-lg font-medium">
               {galleryItems[activeIndex].price}
@@ -284,7 +284,7 @@ const OurCoffees = () => {
       </div>
 
       {/* Project Preview */}
-      <div className="relative flex-[1.75] p-4 pb-8 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
+      <div className="relative flex-[1.75] p-4 pb-1 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
 
       {/* Gallery */}
       <div className="relative z-10 flex flex-col gap-3 overflow-y-auto h-full p-4 bg-black/30 border-l border-white/10 backdrop-blur-md gallery w-[300px]">
