@@ -36,7 +36,7 @@ const OurCoffees = () => {
       const previewImg = document.createElement("img");
       previewImg.src = item.imageurl;
       previewImg.alt = `${item.title} Preview`;
-      previewImg.className = "w-full h-full object-cover";
+      previewImg.className = "w-full h-full object-cover ";
 
       // Logo overlay
       const logo = document.createElement("img");
@@ -107,12 +107,12 @@ const OurCoffees = () => {
 
       const projectImgContainer = document.createElement("div");
       projectImgContainer.className =
-        "w-96 h-[400px] max-h-[400px] overflow-hidden rounded-lg mb-2 mt-4 mx-auto";
+        "w-96 h-[400px] max-h-[400px] overflow-hidden rounded-lg  mt-4 mx-auto my-auto";
 
       const projectImg = document.createElement("img");
       projectImg.src = item.imageurl;
       projectImg.alt = `${item.title} Preview`;
-      projectImg.className = "w-full h-full object-cover";
+      projectImg.className = "w-full h-full object-cover ";
 
       projectImgContainer.appendChild(projectImg);
 
@@ -224,7 +224,7 @@ const OurCoffees = () => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
-              style={{ width: '250px', height: '400px' }}
+              style={{ width: '250px', height: '250px' }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
