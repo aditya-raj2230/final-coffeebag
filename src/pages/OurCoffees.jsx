@@ -201,16 +201,16 @@ const OurCoffees = () => {
       </div>
 
       {/* Site Info / Product Details */}
-      <div className="relative flex flex-[0.75] flex-col justify-center p-4 border-r border-white/10">
-        <div className="relative flex flex-col items-center">
+      <div className="relative flex flex-[0.75] flex-col justify-between p-4 border-r border-white/10 h-full">
+        <div className="relative flex flex-col items-center flex-grow">
           {/* Hover Image */}
           <img
             src={galleryItems[activeIndex].hoverUrl}
             alt="Coffee Doodle"
-            className="absolute z-10 w-[300px] h-[300px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
+            className="absolute z-10 w-[500px] h-[400px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
             style={{ 
               opacity: isHovering ? 1 : 0,
-              top: -20,
+              top: 0,
               left: '50%',
               transform: 'translateX(-50%)'
             }}
@@ -224,7 +224,7 @@ const OurCoffees = () => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
-              style={{ width: '250px', height: '250px', marginBottom:'20px' }}
+              style={{ width: '300px', height: '400px', marginBottom:'20px' }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
@@ -238,53 +238,53 @@ const OurCoffees = () => {
               />
             </Canvas>
           </div>
-          
-          {/* Product Details Container */}
-          <div className="w-[300px] space-y-4 ">
-            {/* Price */}
-            <div className="text-center text-lg font-medium">
-              {galleryItems[activeIndex].price}
-            </div>
+        </div>
 
-            {/* Dropdown Menus */}
-            <div className="space-y-3">
-              <select 
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-                className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
-              >
-                <option value="250g">250g</option>
-                <option value="500g">500g</option>
-                <option value="1kg">1kg</option>
-              </select>
+        {/* Product Details Container */}
+        <div className="w-[300px] space-y-4 p-0">
+          {/* Price */}
+          <div className="text-center text-lg font-medium">
+            {galleryItems[activeIndex].price}
+          </div>
 
-              <select 
-                value={grindType}
-                onChange={(e) => setGrindType(e.target.value)}
-                className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
-              >
-                <option value="Whole Bean">Whole Bean</option>
-                <option value="Espresso">Espresso</option>
-                <option value="Filter">Filter</option>
-                <option value="French Press">French Press</option>
-              </select>
+          {/* Dropdown Menus */}
+          <div className="space-y-3">
+            <select 
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
+            >
+              <option value="250g">250g</option>
+              <option value="500g">500g</option>
+              <option value="1kg">1kg</option>
+            </select>
 
-              {/* Add to Cart Button */}
-              <button 
-                onClick={() => {
-                  console.log(`Added ${quantity} of ${grindType} ${galleryItems[activeIndex].title} to cart`);
-                }}
-                className="w-full py-2 px-4 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
-              >
-                Add to Cart
-              </button>
-            </div>
+            <select 
+              value={grindType}
+              onChange={(e) => setGrindType(e.target.value)}
+              className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
+            >
+              <option value="Whole Bean">Whole Bean</option>
+              <option value="Espresso">Espresso</option>
+              <option value="Filter">Filter</option>
+              <option value="French Press">French Press</option>
+            </select>
+
+            {/* Add to Cart Button */}
+            <button 
+              onClick={() => {
+                console.log(`Added ${quantity} of ${grindType} ${galleryItems[activeIndex].title} to cart`);
+              }}
+              className="w-full py-2 px-4 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
       {/* Project Preview */}
-      <div className="relative flex-[1.75] p-4 pb-1 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
+      <div className="relative flex-[1.75] p-4 pb-0 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
 
       {/* Gallery */}
       <div className="relative z-10 flex flex-col gap-3 overflow-y-auto h-full p-4 bg-black/30 border-l border-white/10 backdrop-blur-md gallery w-[300px]">
