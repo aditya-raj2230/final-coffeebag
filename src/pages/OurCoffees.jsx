@@ -219,12 +219,15 @@ const OurCoffees = () => {
           {/* Canvas wrapper */}
           <div
             className="transition-opacity duration-800 ease-in-out"
-            style={{ opacity: isLoading ? 0 : 1 }}
+            style={{ 
+              opacity: isLoading ? 0 : 1,
+              marginTop: '20px'
+            }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
-              style={{ width: '300px', height: '400px', marginBottom:'20px' }}
+              style={{ width: '300px', height: '400px', }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
@@ -248,11 +251,11 @@ const OurCoffees = () => {
           </div>
 
           {/* Dropdown Menus and Add to Cart Button */}
-          <div className="space-y-3">
+          <div className="space-y-3 w-full flex flex-col items-center">
             <select 
               value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
-              className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
+              className="w-3/4 p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
             >
               <option value="250g">250g</option>
               <option value="500g">500g</option>
@@ -262,7 +265,7 @@ const OurCoffees = () => {
             <select 
               value={grindType}
               onChange={(e) => setGrindType(e.target.value)}
-              className="w-full p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
+              className="w-3/4 p-2 bg-black/30 backdrop-blur-sm border border-white/20 rounded-lg focus:outline-none focus:border-white/40"
             >
               <option value="Whole Bean">Whole Bean</option>
               <option value="Espresso">Espresso</option>
@@ -275,7 +278,7 @@ const OurCoffees = () => {
               onClick={() => {
                 console.log(`Added ${quantity} of ${grindType} ${galleryItems[activeIndex].title} to cart`);
               }}
-              className="w-full py-2 px-4 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
+              className="w-3/4 py-2 px-4 bg-white text-black font-medium rounded-lg hover:bg-white/90 transition-colors duration-200"
             >
               Add to Cart
             </button>
