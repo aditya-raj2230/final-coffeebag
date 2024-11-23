@@ -7,6 +7,9 @@ import { OrbitControls } from "@react-three/drei";
 
 const OurCoffees = () => {
   const [activeTexture, setActiveTexture] = useState(galleryItems[0].textureurl);
+  const [isHovering, setIsHovering] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const gallery = document.querySelector(".gallery");
@@ -120,11 +123,18 @@ const OurCoffees = () => {
     const handleItemClick = (index) => {
       if (index === activeItemIndex || isAnimating) return;
       isAnimating = true;
+      setIsLoading(true);
 
       const activeItem = galleryItems[index];
 
-      // Update active texture
+      // Update active texture and index
       setActiveTexture(activeItem.textureurl);
+      setActiveIndex(index);
+
+      // Add timeout to simulate loading and ensure smooth transition
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 800);
 
       gsap.to(projectPreview.children, {
         opacity: 0,
@@ -190,22 +200,42 @@ const OurCoffees = () => {
 
       {/* Site Info */}
       <div className="relative flex flex-1 flex-col justify-center p-4 border-r border-white/10">
-      
-        {/* Canvas for Three.js rendering */}
-        <Canvas
-          style={{ width: '300px', height: '350px', position: 'relative', margin: '0', top: '-50px' }}
-          camera={{ position: [0, 0, 12] }}
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 5, 5]} intensity={1} />
-          <CoffeeOBJ texturePath={activeTexture} scale={[0.5, 0.5, 0.5]} />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
+          <img
+            src={galleryItems[activeIndex].hoverUrl}
+            alt="Coffee Doodle"
+            className="absolute inset-0 z-10 w-[300px] h-[350px] object-contain pointer-events-none transition-opacity duration-300 ease-in-out"
+            style={{ 
+              top: '-50px',
+              opacity: isHovering ? 1 : 0
+            }}
           />
-        </Canvas>
+          
+          {/* Updated Canvas wrapper with transition */}
+          <div
+            className="transition-opacity duration-800 ease-in-out"
+            style={{ opacity: isLoading ? 0 : 1 }}
+          >
+            <Canvas
+              style={{ width: '300px', height: '350px', position: 'relative', margin: '0', top: '-50px' }}
+              camera={{ position: [0, 0, 12] }}
+            >
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[5, 5, 5]} intensity={1} />
+              <CoffeeOBJ texturePath={activeTexture} scale={[0.5, 0.5, 0.5]} />
+              <OrbitControls
+                enableZoom={false}
+                enablePan={false}
+                maxPolarAngle={Math.PI / 2}
+                minPolarAngle={Math.PI / 2}
+              />
+            </Canvas>
+          </div>
+        </div>
       </div>
 
       {/* Project Preview */}

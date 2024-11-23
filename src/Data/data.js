@@ -4,6 +4,7 @@ export const galleryItems = [
     titleurl: "/coffeeImages/The Answer 1/The Answer Logo.jpg",
     imageurl: "/coffeeImages/The Answer 1/The Answer Bag.jpg",
     textureurl: "/images/The Answer.png",
+    hoverUrl: "/images/theanswer-doodlePNG2.png",
     copy: "If you like dark roasted, full-bodied coffee we haven't forgotten about you.",
     price: "$11.50 / lb | $7.94 / 10oz | $25.30 / Kilo | $57.50 / 5lb",
     details: {
@@ -21,6 +22,7 @@ export const galleryItems = [
     titleurl: "/coffeeImages/After-Party/Productdetail_2x_fe2ed641-1465-493a-9450-2cffd0baee74_480x480.jpg",
     imageurl: "/coffeeImages/After-Party/After-Party.jpg",
     textureurl: "/images/The Answer.png",
+    hoverUrl: "/images/Ethiopia DoodlePNG.png",
     copy: "If you like dark roasted, full-bodied coffee we haven't forgotten about you.",
     price: "$11.50 / lb | $7.94 / 10oz | $25.30 / Kilo | $57.50 / 5lb",
     details: {
@@ -38,6 +40,7 @@ export const galleryItems = [
     titleurl: "/coffeeImages/Best-Friends-Blend/BFB-Product_detail_480x480.jpg",
     imageurl: "/coffeeImages/Best-Friends-Blend/Best-Friends-Blend.jpg",
     textureurl: "/images/The Answer.png",
+    hoverUrl: "/images/Ethiopia DoodlePNG.png",
     copy: "If you like dark roasted, full-bodied coffee we haven't forgotten about you.",
     price: "$11.50 / lb | $7.94 / 10oz | $25.30 / Kilo | $57.50 / 5lb",
     details: {
@@ -55,6 +58,7 @@ export const galleryItems = [
     titleurl: "/coffeeImages/Kercha/Kercha Logo.jpg",
     imageurl: "/coffeeImages/Kercha/Kercha.jpg",
     textureurl: "/images/Kercha.png",
+    hoverUrl: "/images/Ethiopia DoodlePNG.png",
     copy: "If you like dark roasted, full-bodied coffee we haven't forgotten about you.",
     price: "$11.50 / lb | $7.94 / 10oz | $25.30 / Kilo | $57.50 / 5lb",
     details: {
@@ -72,6 +76,7 @@ export const galleryItems = [
     titleurl: "/coffeeImages/Nightshift/Nightshift.jpg",
     imageurl: "/coffeeImages/Nightshift/Night-shift.jpg",
     textureurl: "/images/Night Shift.png",
+    hoverUrl: "/images/nightshift-doodle2.png",
     copy: "If you like dark roasted, full-bodied coffee we haven't forgotten about you.",
     price: "$11.50 / lb | $7.94 / 10oz | $25.30 / Kilo | $57.50 / 5lb",
     details: {
