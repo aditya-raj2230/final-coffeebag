@@ -107,12 +107,12 @@ const OurCoffees = () => {
 
       const projectImgContainer = document.createElement("div");
       projectImgContainer.className =
-        "w-full h-[400px] max-h-[400px] overflow-hidden rounded-lg mb-2 mt-4";
+        "w-full overflow-hidden rounded-lg mb-2 mt-4";
 
       const projectImg = document.createElement("img");
       projectImg.src = item.imageurl;
       projectImg.alt = `${item.title} Preview`;
-      projectImg.className = "w-full h-full object-cover";
+      projectImg.className = "w-full h-auto object-contain";
 
       projectImgContainer.appendChild(projectImg);
 
@@ -283,8 +283,9 @@ const OurCoffees = () => {
         </div>
       </div>
 
-      {/* Project Preview */}
-      <div className="relative flex-[1.75] p-4 pb-8 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
+      {/* Project Preview - adjusted padding and overflow handling */}
+      <div className="relative flex-[1.75] p-4 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto">
+      </div>
 
       {/* Gallery */}
       <div className="relative z-10 flex flex-col gap-3 overflow-y-auto h-full p-4 bg-black/30 border-l border-white/10 backdrop-blur-md gallery w-[300px]">
