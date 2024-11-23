@@ -227,7 +227,7 @@ const OurCoffees = () => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <Canvas
-              style={{ width: '300px', height: '400px',marginTop:'80px' }}
+              style={{ width: '300px', height: '400px', }}
               camera={{ position: [0, 0, 12] }}
             >
               <ambientLight intensity={0.5} />
