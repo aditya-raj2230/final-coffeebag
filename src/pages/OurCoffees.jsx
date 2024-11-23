@@ -107,7 +107,7 @@ const OurCoffees = () => {
 
       const projectImgContainer = document.createElement("div");
       projectImgContainer.className =
-        "w-96 h-[400px] max-h-[400px] overflow-hidden rounded-lg  mt-4 mx-auto my-auto";
+        "w-96 h-[60vh] max-h-[80vh] overflow-hidden rounded-lg  mt-4 mx-auto my-auto";
 
       const projectImg = document.createElement("img");
       projectImg.src = item.imageurl;
