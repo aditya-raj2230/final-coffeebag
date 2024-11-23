@@ -189,7 +189,7 @@ const OurCoffees = () => {
   }, []);
 
   return (
-    <div className="flex h-screen w-screen overflow-auto text-white">
+    <div className="flex h-screen w-screen overflow-auto pb-0 text-white">
       {/* Blurry Preview */}
       <div className="fixed w-screen h-screen inset-0 blurry-prev -z-10 ">
         <img
@@ -241,13 +241,13 @@ const OurCoffees = () => {
         </div>
 
         {/* Product Details Container */}
-        <div className="w-[300px] space-y-4 p-0">
+        <div className="w-[300px] space-y-4 p-0 flex flex-col justify-end flex-grow">
           {/* Price */}
           <div className="text-center text-lg font-medium">
             {galleryItems[activeIndex].price}
           </div>
 
-          {/* Dropdown Menus */}
+          {/* Dropdown Menus and Add to Cart Button */}
           <div className="space-y-3">
             <select 
               value={quantity}
@@ -284,7 +284,7 @@ const OurCoffees = () => {
       </div>
 
       {/* Project Preview */}
-      <div className="relative flex-[1.75] p-4 pb-0 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
+      <div className="relative flex-[1.75] p-4 pb-0 mb-0 project-preview mx-auto bg-black/20 backdrop-blur-sm overflow-y-auto"></div>
 
       {/* Gallery */}
       <div className="relative z-10 flex flex-col gap-3 overflow-y-auto h-full p-4 bg-black/30 border-l border-white/10 backdrop-blur-md gallery w-[300px]">
