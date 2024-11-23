@@ -54,7 +54,7 @@ export const galleryItems = [
     title: "Kercha",
     titleurl: "/coffeeImages/Kercha/Kercha Logo.jpg",
     imageurl: "/coffeeImages/Kercha/Kercha.jpg",
-    textureurl: "/images/The Answer.png",
+    textureurl: "/images/Kercha.png",
     copy: "If you like dark roasted, full-bodied coffee we haven't forgotten about you.",
     price: "$11.50 / lb | $7.94 / 10oz | $25.30 / Kilo | $57.50 / 5lb",
     details: {
